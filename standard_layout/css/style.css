@@ -384,6 +384,11 @@ a:active {
 .horizontal-list .horizontal-item + .horizontal-item {
   border-left: 1px solid #bbb;
 }
+.copyright {
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
 .clearfix::after {
   content: '';
   display: block;
