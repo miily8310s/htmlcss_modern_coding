@@ -30,6 +30,7 @@ a:active {
   border-bottom: 3px solid;
   border-radius: 5px;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .item .image {
@@ -60,6 +61,18 @@ a:active {
   line-height: 1.5;
 }
 
+.item > a::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  display: block;
+  height: 109px;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
 .item > a {
   display: block;
   margin: -8px -8px -11px;
@@ -68,9 +81,34 @@ a:active {
   color: #777;
   transition: all 0.3s;
 }
+.item > a:hover::before {
+  opacity: 1;
+}
 .item > a:hover {
   box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
   opacity: 0.8;
+}
+.item > a::after {
+  content: 'MORE';
+  position: absolute;
+  left: 150%;
+  top: 43.5px;
+  display: block;
+  width: 100px;
+  margin-left: -50px;
+  padding: 8px;
+  border: 3px solid #fff;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 1.6rem;
+  font-family: 'Trebuchet MS', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.item > a:hover::after {
+  left: 50%;
+  opacity: 1;
 }
 
 .item-maindish,
@@ -96,11 +134,23 @@ a:active {
 .item-m .image {
   height: 146px;
 }
+.item-m > a::before {
+  height: 146px;
+}
+.item-m > a::after {
+  top: 62px;
+}
 .item-l {
   width: 732px;
 }
 .item-l .image {
   height: 403px;
+}
+.item-l > a::before {
+  height: 403px;
+}
+.item-l > a::after {
+  top: 190.5px;
 }
 
 .header {
